@@ -6,15 +6,15 @@
 {{/each}}
 
 <div class="page-header">
-    <h1>Regisztráció</h1>
+    <h1>Bejelentkezés</h1>
 </div>
 
 <form class="form-horizontal" method="post">
     <fieldset>
         <div class="form-group">
-            <label for="forename" class="col-lg-2 control-label">Név</label>
+            <label for="forename" class="col-lg-2 control-label">Keresztnév</label>
             <div class="col-lg-10">
-                <input class="form-control" type="text" id="forename" name="forename">
+                <input class="form-control" id="forename" name="forename" type="text" value="{{data.forename}}">
             </div>
         </div>
         <div class="form-group">
@@ -23,7 +23,6 @@
                 <input class="form-control" type="password" id="password" name="password">
             </div>
         </div>
-        
         <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
                 <button type="reset" class="btn btn-default">Cancel</button>
@@ -32,3 +31,9 @@
         </div>
     </fieldset>
 </form>
+
+<div class="list-group">
+  <a href="/signup" class="list-group-item">
+    Regisztráció
+  </a>
+</div>
