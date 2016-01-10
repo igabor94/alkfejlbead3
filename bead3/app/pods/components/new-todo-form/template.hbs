@@ -2,8 +2,18 @@
     <fieldset>
         <div class="form-group {{if todos.megbizott "has-error"}}">
             <label for="helyszin" class="col-lg-2 control-label">Megbízott</label>
+            
+            
             <div class="col-lg-10">
-                <input class="form-control" id="megbizott" name="megbizott" placeholder="pl. egy név, hogy kinek szól a feladat." type="text" value="{{data.megbizott}}">
+                <select class="form-control" id="megbizott" name="megbizott" >
+                    {{#each userss as |user|}}
+ Név: {{user.forename}}
+                    {{/each}}
+                    <option value="Akárki">Akárki</option>
+                    {{#each userss}}
+                        <option value="{{forename}}">{{forename}}</option>
+                    {{/each}}
+                </select>
                 <span class="help-block">{{todos.megbizott}}</span>
             </div>
         </div>
