@@ -9,16 +9,15 @@ Téma: Családi TODO
 - #### Funkcionális elvárások
 	- Látogatóként regisztráció az oldalra
 	- Látogatóként bejelentkezés az oldalra
-	- Felhasználóként a feladatok megtekintése
-	- Felhasználóként feladat kiírása
-	- Felhasználóként feladat szerkesztése
-	- Szülőként feladat törlése
+	- Látogatóként a feladatok megtekintése
+	- Látogatóként feladat kiírása
+	- Látogatóként feladat szerkesztése
+	- Látogatóként feladat törlése
 	- Főoldalon az alkalmazás ismertetése
 
 - #### Nem-funkcionális elvárások
     - Felhasználóbarát kinézet
     - Hatákonyság
-    - Biztonságos működés: jogosultságok megfelelő ellenőrzése, jelszavak titkosított tárolása
 
 
 ### Használatieset-modell
@@ -28,16 +27,12 @@ Téma: Családi TODO
 		- főoldal megtekintése
 		- bejelentkezés
 		- regisztráció
+        - feladatok megtekintése
+        - feladat teljeskörű szerkesztése
+        - feladat törlése
         
     2. Felhasználó
         - Vendég szerepköre
-        - feladatok megtekintése
-        - a neki szánt feladatok állapotának módosítása
-
-    3. Admin
-        - Felhasználó szerepköre
-        - feladat teljeskörű szerkesztése
-        - feladat törlése
 
 - #### Használatieset diagram
     ![Használati esetek](docs/images/haszneset.png)
@@ -56,8 +51,6 @@ Téma: Családi TODO
 	    - Főoldal
 	    - Bejelentkezés
 	    - Regisztráció
-	    
-	- **Bejelentkezve:**
 	    - Főoldal
 	    - Kijelentkezés
 	    - Feladatok listája
@@ -67,17 +60,11 @@ Téma: Családi TODO
 
 - #### Végpontok
     - GET /: főoldal
-    - GET /login: bejelentkezés
-    - POST /login: bejelentkezési adatok feldolgozása
-    - GET /logout: kijelentkezés
-    - GET /signup: regisztráció
-    - POST /signup: regisztrációs adatok feldolgozása
     - GET /todos/list: feladatok listázása
     - GET /todos/new: új feladat bejegyzése
     - POST /todos/new: újonnan bejegyzett adat feldolgozása
     - GET /todos/edit/id: feladat szerkesztése
     - POST /todos/edit/id: szerkesztett adat feldolgozása
-    - GET /todos/delete/id: feladat törlése
 
 ### Felhasználóifelület-modell
 - #### Oldalvázlatok
@@ -125,34 +112,23 @@ Téma: Családi TODO
 ## Implementáció
 ### Fejlesztői környezet bemutatása
 - Cloud9, felhőalapú IDE
-- Heroku, felhőalapú applikációs platform
 - GitHub, online verziókövető rendszer
 
-### Könyvtárstruktúrában lévő mappák funkiójának bemutatása
-- models: adatmodellek
-- views: nézetek
-- node_modules: szükséges modulok
-
-## Tesztelés
-Tesztelés zombie.js használatával
-![Teszt](docs/images/teszt.png)
 
 
 ## Felhasználói dokumentáció
 ### A futtatáshoz ajánlott hardver-, szoftver konfiguráció
-A heroku platform használata javasolt, Cloud9-al és GitHub-al együtt.
+A Cloud9 használata javasolt.
 Helyileg is futtatható, ehhez további előkészületek szükségesek:
 - nodejs (+ npm) telepítése
-- ha herokut használunk, a heroku-toolbelt és a git telepítése
 
 A hardverkövetelmények minimálisak.
 
 ### Telepítés lépései
 Helyi gépen (vagy Cloud9-on):
 
-- git clone https://github.com/igabor94/alkfejlbead1.git
+- git clone https://github.com/igabor94/alkfejlbead3.git
 - npm install
 ### A program 
-Az alábbi parancsok egyikével futtatható:
-- node index.js
-- nodemon index.js (ajánlott)
+Az alábbi paranccsal futtatható:
+- ember serve
