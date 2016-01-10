@@ -1,0 +1,34 @@
+<form class="form-horizontal" method="post">
+    <fieldset>
+        <div class="form-group {{if todos.megbizott "has-error"}}">
+            <label for="helyszin" class="col-lg-2 control-label">Megbízott</label>
+            
+            
+            <div class="col-lg-10">
+                <select class="form-control" id="megbizott" name="megbizott" >
+                    {{#each userss as |user|}}
+ Név: {{user.forename}}
+                    {{/each}}
+                    <option value="Akárki">Akárki</option>
+                    {{#each userss}}
+                        <option value="{{forename}}">{{forename}}</option>
+                    {{/each}}
+                </select>
+                <span class="help-block">{{todos.megbizott}}</span>
+            </div>
+        </div>
+        <div class="form-group {{if todos.description "has-error"}}">
+            <label for="leiras" class="col-lg-2 control-label">Leírás</label>
+            <div class="col-lg-10">
+                <textarea class="form-control" rows="3" id="leiras" name="leiras">{{data.description}}</textarea>
+                <span class="help-block">{{todos.description}}</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-default">Cancel</button>
+                <button {{action "submit"}} class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </fieldset>
+</form>        

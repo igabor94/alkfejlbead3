@@ -11,8 +11,7 @@ export default Ember.Controller.extend({
                         {
                             password: '',
                             forename: '',
-                            role: 0,
-                            todos: []
+                            role: 0
                         }, 
                         formData
                     )

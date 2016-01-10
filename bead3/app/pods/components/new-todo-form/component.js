@@ -14,7 +14,7 @@ export default Ember.Component.extend({
             this.get('onSave')({
                 megbizott: this.$('#megbizott').val(),
                 description: this.$('#leiras').val(),
-                status: 'Uj',
+                status: this.$('#status').val(),
                 date: new Date().toString()
             });
         }
@@ -23,11 +23,12 @@ export default Ember.Component.extend({
     validate() {
         var megbizott = this.$('#megbizott').val();
         var description = this.$('#leiras').val();
+        var status = this.$('#status').val();
         
         this.set('todos.description', description === '' ? 'Feladat leírás kötelező' : '');
         this.set('todos.megbizott', megbizott === '' ? 'Megbízott kitöltése kötelező' : '');
+        this.set('todos.status', status === '' ? 'Status kitöltése kötelező' : '');
         
-        return this.get('todos.description') === '' &&
-               this.get('todos.megbizott') === '';
+        return this.get('todos.description') === '' && this.get('todos.megbizott') === '' && this.get('todos.status') === '' ;
     }
 });
